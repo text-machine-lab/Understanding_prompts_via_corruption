@@ -57,12 +57,13 @@ chat.
 # C. Evaluation
 
 - The datasets for evaluation are listed in `src/evaluation/test_tasks.txt`.
-- To evaluate the models run
+  
+- TFirst we will get the prediction from the model for the specific list of corruptions, run the following to generation model prediction.
         
         python evaluation/evaluate_model.py /
         --modelname [MODELNAME] /
         --corruptions_name_list [LIST OF CORRUPTION NAMES] /
-        --task_set_no [SET NUMBER] /
+        --task_set_no [SET NUMBER] / 
         --max_target_len [MAXIMUM TARGET LENGTH] /
         --batch_size [EVALUATION BATCH SIZE]
 
@@ -72,3 +73,13 @@ chat.
         --task_set_no set1 /
         --max_target_len 10 /
         --batch_size 16
+
+This will save the prediction in the `output_dir/`
+
+- Run the following script to compute metrics for the model predictions
+        
+        python evaluation/compute_metrics.py --predictions [PREDICTION JSONL FILE PATH] predicted_examples_[CORRUPTION NAME].jsonl --track default --compute_per_category_metrics --compute_per_task_metrics'
+
+        e.g. 
+
+        python evaluation/compute_metrics.py --predictions output/1.56B_gpt2-xl/set100/predicted_examples_only_instruction.jsonl --track default --compute_per_category_metrics --compute_per_task_metrics
