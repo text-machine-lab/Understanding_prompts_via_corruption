@@ -116,28 +116,34 @@ Next we use `plots/get_plot_pdf.ipynb` notebook to plot attention plots which ar
 
 # Corruption names code supports
 
-- 'empty',
-- 'only_demostration',
-- 'only_instruction',
-- 'only_inline',
-- 'both_instructions',
-- 'instr_n_demo',
-- 'inline_n_demo',
-- 'all_instr_n_demo',
-- 'instr_randomwords',
-- 'labels_randomwords',
-- 'input_empty', 
-- 'label_empty', 
-- 'input_ood',
-- 'input_randomwords'
-- 'inline_instr_in_0_demo',
-- 'inline_instr_in_1_demo',
-- 'inline_instr_in_2_demo',
-- 'inline_instr_in_3_demo',
-- 'randomwords_inline_instr_in_0_demo',
-- 'randomwords_inline_instr_in_1_demo',
-- 'randomwords_inline_instr_in_2_demo',
-- 'randomwords_inline_instr_in_3_demo',
+- **'empty'**, Only test instance in the prompt.
+- **'only_demostration',** is where the four demostrations are added to the test instance. 
+- '**only_instruction',** is where the task instruction is added to the test instance. 
+- '**only_inline',** instead of task instruction, inline instruction
+is added to the test instance.
+- **'both_instructions',** we adds both task and inline instruction to the test in- stance
+- **'instr_n_demo',** stands for adding the task instructions as well as
+four demonstrations to the test instance.
+- **'inline_n_demo',** we adds inline instruction in every demonstrations and no task instruction is included in this prompt. 
+- **'all_instr_n_demo',** this is the Baseline prompt which includes all
+prompt components i.e. task instruction, demonstrations, inline instructions, and test instance.
+- **'instr_randomwords',** both task and inline instructions are corrupted with random words.
+- **'labels_randomwords',** labels are corrupted with random words.
+- **'input_empty',** We remove demonstration inputs from baseline prompt.
+- **'label_empty',** We remove demonstration labels from baseline prompt.
+- **'input_ood',** stands for Out-of-Distribution input corruption
+- **'input_randomwords'** demostration inputs are corrupted with random words [new!]
+  
+In repeated text corruptions i.e. Inline instr. in [n] demos. and
+Rw inline instr. in [n] demos., we add meaningful and random words inline instruction in “n” number of demonstrations respectively.
+- **'inline_instr_in_0_demo',**
+- **'inline_instr_in_1_demo',**
+- **'inline_instr_in_2_demo',**
+- **'inline_instr_in_3_demo',**
+- **'randomwords_inline_instr_in_0_demo',**
+- **'randomwords_inline_instr_in_1_demo',**
+- **'randomwords_inline_instr_in_2_demo',**
+- **'randomwords_inline_instr_in_3_demo',**
 
 # Citation
 [TBD]
