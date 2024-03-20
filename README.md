@@ -1,4 +1,7 @@
-# Understanding_prompts_via_corruption
+# Deconstructing In-Context Learning: Understanding Prompts via Corruption
+
+This is the code repository for the paper **Deconstructing In-Context Learning: Understanding Prompts via Corruption**. Arxiv link [TBD]
+
 
 # Requirements
 ```
@@ -84,7 +87,9 @@ This will save the prediction in the `output_dir/`
 
         python evaluation/compute_metrics.py --predictions output/1.56B_gpt2-xl/set100/predicted_examples_only_instruction.jsonl --track default --compute_per_category_metrics --compute_per_task_metrics
 
-
+- Jacknife variance estimation
+  
+  Once we have the metric, we use jacknife varaicne estimation method to compute mean and variance of the metric. Select an input file and run the notebook `src/evaluation/jacknife_variance_estimation.ipynb `.
 
 
 # D. Attention plots
@@ -98,4 +103,28 @@ Firstly we pick 10 samples from each dataset where the model predicted correctly
 
 Next we use `plots/get_plot_pdf.ipynb` notebook to plot attention plots which are presented inthe paper.
 
-# Corruption names which is code supports
+# Corruption names code supports
+
+- 'empty',
+- 'only_demostration',
+- 'only_instruction',
+- 'only_inline',
+- 'both_instructions',
+- 'instr_n_demo',
+- 'inline_n_demo',
+- 'all_instr_n_demo',
+- 'instr_randomwords',
+- 'labels_randomwords',
+- 'input_empty', 
+- 'label_empty', 
+- 'input_ood',
+- 'input_randomwords'
+- 'inline_instr_in_0_demo',
+- 'inline_instr_in_1_demo',
+- 'inline_instr_in_2_demo',
+- 'inline_instr_in_3_demo',
+- 'randomwords_inline_instr_in_0_demo',
+- 'randomwords_inline_instr_in_1_demo',
+- 'randomwords_inline_instr_in_2_demo',
+- 'randomwords_inline_instr_in_3_demo',
+
