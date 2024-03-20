@@ -83,3 +83,19 @@ This will save the prediction in the `output_dir/`
         e.g. 
 
         python evaluation/compute_metrics.py --predictions output/1.56B_gpt2-xl/set100/predicted_examples_only_instruction.jsonl --track default --compute_per_category_metrics --compute_per_task_metrics
+
+
+
+
+# D. Attention plots
+
+Firstly we pick 10 samples from each dataset where the model predicted correctly. For each of these sample, we compute component length and average attention norm on this components and save the complete jsonl file in `plot/collect_results/[modelname]_results`. Run the following command to get the complete jsol file for a corruption.
+
+
+        python get_plots.py --file_path [PREDICTION JSONL FILEPATH] --corruption_name [CORRUPTION NAME]
+        e.g.
+        python get_plots.py --file_path ../predictions/6.05B_gpt-j-6B/all_corruptions/predicted_examples_all_instr_n_demo.jsonl --corruption_name all_instr_n_demo
+
+Next we use `plots/get_plot_pdf.ipynb` notebook to plot attention plots which are presented inthe paper.
+
+# Corruption names which is code supports
