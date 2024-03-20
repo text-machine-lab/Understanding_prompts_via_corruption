@@ -1,6 +1,8 @@
 # Deconstructing In-Context Learning: Understanding Prompts via Corruption
 
-This is the code repository for the paper **Deconstructing In-Context Learning: Understanding Prompts via Corruption**. Arxiv link [TBD]
+This is the official code for **Deconstructing In-Context Learning: Understanding Prompts via Corruption**. Arxiv link [TBD]
+
+Accepted to LREC-COLING 2024 main conference.
 
 <img width="813" alt="ICL_via_corruption" src="images/4a_image.png">
 Repeated inline instruction boost model performance.
