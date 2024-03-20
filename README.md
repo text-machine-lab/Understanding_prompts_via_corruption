@@ -2,6 +2,15 @@
 
 This is the code repository for the paper **Deconstructing In-Context Learning: Understanding Prompts via Corruption**. Arxiv link [TBD]
 
+<img width="813" alt="ICL_via_corruption" src="images/4a_image.png">
+Repeated inline instruction boost model performance.
+
+
+
+# **Keypoints**
+1. Including repeated text in the prompt boosts model performance.
+2. Addition of both task and in-line instructions improves model performance, even when these instructions are random words.
+3. Larger models exhibit higher sensitivity to prompt semantics and pay more attention to the semantically relevant prompt components.
 
 # Requirements
 ```
